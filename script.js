@@ -12,6 +12,7 @@ const deletePassword = (website) => {
     localStorage.setItem("passwords", JSON.stringify(arrUpdated));
     alert("Password Deleted !");
     showPasswords();
+    window.location.reload();
 };
 
 const showPasswords = () => {
@@ -44,7 +45,6 @@ const showPasswords = () => {
         username.value = "";
         password.value = "";
     }
-
 };
 
 function maskPassword(pass) {
@@ -91,5 +91,6 @@ document.querySelector(".submit").addEventListener("click", (e) => {
         }, 2000);
         localStorage.setItem("passwords", JSON.stringify(json));
         showPasswords();
+        window.location.reload();
     }
 });
