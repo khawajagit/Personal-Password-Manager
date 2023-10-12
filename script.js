@@ -71,7 +71,6 @@ function copyText(txt) {
 console.log("Working")
 showPasswords();
 document.querySelector(".submit").addEventListener("click", (e) => {
-    showPasswords();
     document.addEventListener('contextmenu', event => event.preventDefault());
     e.preventDefault();
     // console.log("clicked....");
@@ -93,5 +92,4 @@ document.querySelector(".submit").addEventListener("click", (e) => {
         localStorage.setItem("passwords", JSON.stringify(json));
         showPasswords();
     }
-    showPasswords();
 });
