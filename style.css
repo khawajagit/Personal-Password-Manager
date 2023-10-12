@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.span{
+    color: rgb(36, 197, 36);
+}
+table, tr, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 10px 35px;
+    align-items: center;
+}
+.container{
+    width: 80vw;
+    margin: 23px auto ;
+}
+h1, h2{
+    margin: 23px 0px;
+}
+.btn{
+    outline: none;
+    border: none;
+    padding: 4px 8px;
+    background: #000;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+td{
+    position: relative;
+    text-align: left;
+} 
+i{
+    cursor: pointer;
+    padding-right: 10px;
+    position: absolute;
+    right: 0;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: inline-block;
+}.red{
+    color: red;
+    font-weight: 600;
+    font-size: 18px;
+}
