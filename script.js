@@ -1,5 +1,5 @@
 let data = localStorage.getItem("passwords");
-
+console.log();
 
 
 const deletePassword = (website) => {
@@ -10,7 +10,7 @@ const deletePassword = (website) => {
         return e.website != website;
     })
     localStorage.setItem("passwords", JSON.stringify(arrUpdated));
-    alert(`Successfully deleted ${website}'s password`);
+    alert("Password Deleted !");
     showPasswords();
 };
 
@@ -58,10 +58,9 @@ function maskPassword(pass) {
 function copyText(txt) {
     navigator.clipboard.writeText(txt).then(
         () => {
-            let span = document.querySelector('span');
-            span.classList.add('show');
+            copied.classList.add('show');
             setTimeout(() => {
-                span.classList.remove('show');
+                copied.classList.remove('show');
             }, 2000)
         },
         () => {
@@ -72,6 +71,7 @@ function copyText(txt) {
 console.log("Working")
 showPasswords();
 document.querySelector(".submit").addEventListener("click", (e) => {
+    showPasswords();
     document.addEventListener('contextmenu', event => event.preventDefault());
     e.preventDefault();
     // console.log("clicked....");
@@ -80,14 +80,18 @@ document.querySelector(".submit").addEventListener("click", (e) => {
     if (passwords == null) {
         let json = []
         json.push({ website: website.value, username: username.value, password: password.value })
-        alert("Password Saved");
+        console.log(JSON.stringify(json));
         localStorage.setItem("passwords", JSON.stringify(json));
     }
     else {
         let json = JSON.parse(localStorage.getItem("passwords"));
         json.push({ website: website.value, username: username.value, password: password.value })
-        alert("Password Saved");
+        saved.classList.add('show');
+        setTimeout(() => {
+            saved.classList.remove('show');
+        }, 2000);
         localStorage.setItem("passwords", JSON.stringify(json));
         showPasswords();
     }
+    showPasswords();
 });
